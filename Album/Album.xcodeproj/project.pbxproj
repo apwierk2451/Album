@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */; };
 		76AB051F298CDEDE00C2DCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */; };
-		76AB0521298CDEDE00C2DCAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB0520298CDEDE00C2DCAF /* ViewController.swift */; };
+		76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */; };
 		76AB0526298CDEDF00C2DCAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AB0525298CDEDF00C2DCAF /* Assets.xcassets */; };
 		76AB0529298CDEDF00C2DCAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AB0527298CDEDF00C2DCAF /* LaunchScreen.storyboard */; };
 		76AB0534298CDEDF00C2DCAF /* AlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB0533298CDEDF00C2DCAF /* AlbumTests.swift */; };
 		76AB053E298CDEDF00C2DCAF /* AlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB053D298CDEDF00C2DCAF /* AlbumUITests.swift */; };
 		76AB0540298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB053F298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift */; };
+		76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB054C298CE54C00C2DCAF /* AlbumManager.swift */; };
+		76AB054F298D63DC00C2DCAF /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */; };
 		76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E645F7298E533100CD6AA6 /* AlbumInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,7 @@
 		76AB053D298CDEDF00C2DCAF /* AlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITests.swift; sourceTree = "<group>"; };
 		76AB053F298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76AB054C298CE54C00C2DCAF /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
+		76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		76E645F7298E533100CD6AA6 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +107,7 @@
 				76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */,
 				76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */,
 				76AB054C298CE54C00C2DCAF /* AlbumManager.swift */,
+				76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */,
 				76AB0525298CDEDF00C2DCAF /* Assets.xcassets */,
 				76AB0527298CDEDF00C2DCAF /* LaunchScreen.storyboard */,
 				76AB052A298CDEDF00C2DCAF /* Info.plist */,
@@ -259,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AB054F298D63DC00C2DCAF /* AlbumTableViewCell.swift in Sources */,
 				76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */,
 				76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */,
 				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
