@@ -39,7 +39,7 @@
 		76AB0519298CDEDE00C2DCAF /* Album.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Album.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		76AB0520298CDEDE00C2DCAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		76AB0525298CDEDF00C2DCAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76AB0528298CDEDF00C2DCAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76AB052A298CDEDF00C2DCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */,
 				76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */,
-				76AB0520298CDEDE00C2DCAF /* ViewController.swift */,
+				76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */,
 				76AB054C298CE54C00C2DCAF /* AlbumManager.swift */,
 				76AB0525298CDEDF00C2DCAF /* Assets.xcassets */,
 				76AB0527298CDEDF00C2DCAF /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76AB0521298CDEDE00C2DCAF /* ViewController.swift in Sources */,
+				76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */,
 				76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */,
 				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
 				76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */,
