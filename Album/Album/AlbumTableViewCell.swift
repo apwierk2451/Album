@@ -15,6 +15,7 @@ final class AlbumTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(systemName: "photo.on.rectangle")
+        imageView.tintColor = .gray
         
         return imageView
     }()
