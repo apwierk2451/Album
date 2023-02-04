@@ -15,6 +15,7 @@
 		76AB0534298CDEDF00C2DCAF /* AlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB0533298CDEDF00C2DCAF /* AlbumTests.swift */; };
 		76AB053E298CDEDF00C2DCAF /* AlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB053D298CDEDF00C2DCAF /* AlbumUITests.swift */; };
 		76AB0540298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB053F298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift */; };
+		76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E645F7298E533100CD6AA6 /* AlbumInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		76AB0539298CDEDF00C2DCAF /* AlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AB053D298CDEDF00C2DCAF /* AlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITests.swift; sourceTree = "<group>"; };
 		76AB053F298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76E645F7298E533100CD6AA6 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				76AB0525298CDEDF00C2DCAF /* Assets.xcassets */,
 				76AB0527298CDEDF00C2DCAF /* LaunchScreen.storyboard */,
 				76AB052A298CDEDF00C2DCAF /* Info.plist */,
+				76E645F7298E533100CD6AA6 /* AlbumInfo.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76AB0521298CDEDE00C2DCAF /* ViewController.swift in Sources */,
+				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
 				76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */,
 				76AB051F298CDEDE00C2DCAF /* SceneDelegate.swift in Sources */,
 			);
