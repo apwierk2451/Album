@@ -48,6 +48,7 @@
 		76AB0539298CDEDF00C2DCAF /* AlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AB053D298CDEDF00C2DCAF /* AlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITests.swift; sourceTree = "<group>"; };
 		76AB053F298CDEDF00C2DCAF /* AlbumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76AB054C298CE54C00C2DCAF /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		76E645F7298E533100CD6AA6 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +103,7 @@
 				76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */,
 				76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */,
 				76AB0520298CDEDE00C2DCAF /* ViewController.swift */,
+				76AB054C298CE54C00C2DCAF /* AlbumManager.swift */,
 				76AB0525298CDEDF00C2DCAF /* Assets.xcassets */,
 				76AB0527298CDEDF00C2DCAF /* LaunchScreen.storyboard */,
 				76AB052A298CDEDF00C2DCAF /* Info.plist */,
@@ -258,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76AB0521298CDEDE00C2DCAF /* ViewController.swift in Sources */,
+				76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */,
 				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
 				76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */,
 				76AB051F298CDEDE00C2DCAF /* SceneDelegate.swift in Sources */,
