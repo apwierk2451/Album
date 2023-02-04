@@ -71,19 +71,17 @@ final class AlbumViewController: UIViewController {
             cell.configureAlbumTitle(itemIdentifier.name)
             cell.configureAlbumCount(itemIdentifier.count)
             
-            guard let asset = itemIdentifier.album.firstObject else {
-                return UITableViewCell()
-            }
-            
-            self?.albumManager.imageManager.requestImage(
-                for: asset,
-                targetSize: CGSize(width: 70, height: 70),
-                contentMode: .aspectFill,
-                options: nil
-            ) { (image, _) in
-                guard let image = image else { return }
-                
-                cell.configureImage(album: image)
+            if let asset = itemIdentifier.album.firstObject {
+                self?.albumManager.imageManager.requestImage(
+                    for: asset,
+                    targetSize: CGSize(width: 70, height: 70),
+                    contentMode: .aspectFill,
+                    options: nil
+                ) { (image, _) in
+                    guard let image = image else { return }
+                    
+                    cell.configureImage(album: image)
+                }
             }
             
             return cell
