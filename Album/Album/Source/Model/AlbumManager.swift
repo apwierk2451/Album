@@ -13,7 +13,6 @@ final class AlbumManager {
     
     private var albums = [AlbumInfo]()
     
-    let imageManager = PHCachingImageManager()
     private var fetchOptions: PHFetchOptions {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]

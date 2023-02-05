@@ -9,17 +9,10 @@ import UIKit
 import Photos
 
 final class AlbumViewController: UIViewController {
-    private let albumsTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = 85
-        tableView.register(AlbumTableViewCell.self,
-                           forCellReuseIdentifier: AlbumTableViewCell.identifier)
-        
-        return tableView
-    }()
+    private let albumsTableView = AlbumListView()
     
     private let albumManager = AlbumManager.shared
+    private let imageManager = PHCachingImageManager()
     
     private enum Section {
         case main
@@ -43,6 +36,7 @@ final class AlbumViewController: UIViewController {
     private func setupDefault() {
         view.backgroundColor = .systemBackground
         navigationItem.title = "앨범"
+        albumsTableView.translatesAutoresizingMaskIntoConstraints = false
         albumsTableView.delegate = self
     }
     
@@ -105,7 +99,7 @@ final class AlbumViewController: UIViewController {
             cell.configureAlbumCount(itemIdentifier.count)
             
             if let asset = itemIdentifier.album.firstObject {
-                self?.albumManager.imageManager.requestImage(
+                self?.imageManager.requestImage(
                     for: asset,
                     targetSize: CGSize(width: 70, height: 70),
                     contentMode: .aspectFill,
