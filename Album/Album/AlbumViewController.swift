@@ -35,7 +35,7 @@ final class AlbumViewController: UIViewController {
         setupDefault()
         addUIComponents()
         setupLayout()
-        albumManager.checkPermission()
+        checkPermission()
         configureDataSource()
         appendDataSource()
     }
@@ -57,6 +57,39 @@ final class AlbumViewController: UIViewController {
             albumsTableView.topAnchor.constraint(equalTo: view.topAnchor),
             albumsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func checkPermission() {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized, .limited:
+            albumManager.requestImageCollection()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                switch $0 {
+                case .authorized:
+                    self.albumManager.requestImageCollection()
+                default:
+                    break
+                }
+            })
+        case .denied:
+            setupPermission()
+        default:
+            break
+        }
+    }
+    
+    private func setupPermission() {
+        let message = "사진 앱 접근 권한이 없습니다.\n[설정] - [개인 정보 보호] - [사진]에서 설정해주세요."
+        let alert = UIAlertController(title: "설정", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "취소", style: .destructive)
+        let okAction = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
     private func configureDataSource() {

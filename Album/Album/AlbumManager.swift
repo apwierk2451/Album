@@ -20,27 +20,7 @@ final class AlbumManager {
         return fetchOptions
     }
     
-    func checkPermission() {
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .authorized:
-            self.requestImageCollection()
-        case .denied: break
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization({
-                switch $0 {
-                case .authorized:
-                    self.requestImageCollection()
-                case .denied: break
-                default:
-                    break
-                }
-            })
-        default:
-            break
-        }
-    }
-    
-    private func requestImageCollection() {
+    func requestImageCollection() {
         let recents = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
         let favorites = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
         let userCollections = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
