@@ -48,6 +48,7 @@ class ImageViewController: UIViewController {
     private func setupDefault() {
         view.backgroundColor = .systemBackground
         navigationItem.title = albumTitle
+        imageCollectionView.delegate = self
     }
     
     private func addUIComponents() {
@@ -113,5 +114,28 @@ class ImageViewController: UIViewController {
         snapshot.appendItems(images)
         dataSource?.applySnapshotUsingReloadData(snapshot)
     }
+    
+    private func showImageInfo(image: PHAsset) {
+        let resource = PHAssetResource.assetResources(for: image)
+        let filename = resource.first?.originalFilename ?? "unknown"
+
+        guard let unsignedInt64 = resource.first?.value(forKey: "fileSize") as? CLong else { return }
+
+        let sizeOnDisk = Int64(bitPattern: UInt64(unsignedInt64))
+        let fileSize = String(format: "%.2f", Double(sizeOnDisk) / (1024.0*1024.0))+" MB"
+
+        let message = "파일명 : \(filename)\n파일크기: \(fileSize)"
+
+        let alert = UIAlertController(title: "사진 정보", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
+extension ImageViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showImageInfo(image: images[indexPath.row])
+    }
+}
