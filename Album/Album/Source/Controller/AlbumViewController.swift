@@ -36,7 +36,6 @@ final class AlbumViewController: UIViewController {
     private func setupDefault() {
         view.backgroundColor = .systemBackground
         navigationItem.title = "앨범"
-        albumsTableView.translatesAutoresizingMaskIntoConstraints = false
         albumsTableView.delegate = self
     }
     
@@ -124,5 +123,15 @@ final class AlbumViewController: UIViewController {
 }
 
 extension AlbumViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedAlbumImages: [PHAsset] = []
+        let selectedAlbum = albumManager.getAlbums()[indexPath.row]
+        for imageNumber in 0..<albumManager.getAlbums()[indexPath.row].count {
+            let image = selectedAlbum.album[imageNumber]
+            selectedAlbumImages.append(image)
+        }
+        let selectedAlbumTitle = albumManager.getAlbums()[indexPath.row].name
+        let imageView = ImageViewController(title: selectedAlbumTitle, images: selectedAlbumImages)
+        navigationController?.pushViewController(imageView, animated: true)
+    }
 }

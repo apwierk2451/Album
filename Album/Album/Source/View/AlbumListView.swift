@@ -20,5 +20,6 @@ final class AlbumListView: UITableView {
     private func setupDefault() {
         self.register(AlbumTableViewCell.self, forCellReuseIdentifier: AlbumTableViewCell.identifier)
         self.rowHeight = 85
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }

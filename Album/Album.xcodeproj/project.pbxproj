@@ -18,6 +18,9 @@
 		76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB054C298CE54C00C2DCAF /* AlbumManager.swift */; };
 		76AB054F298D63DC00C2DCAF /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */; };
 		76E2D70B298FFCF40026DC55 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2D70A298FFCF40026DC55 /* AlbumListView.swift */; };
+		76E2D70F299002840026DC55 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2D70E299002840026DC55 /* ImageViewController.swift */; };
+		76E2D71129900B760026DC55 /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2D71029900B760026DC55 /* ImageCollectionView.swift */; };
+		76E2D71329900C510026DC55 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2D71229900C510026DC55 /* ImageCollectionViewCell.swift */; };
 		76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E645F7298E533100CD6AA6 /* AlbumInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		76AB054C298CE54C00C2DCAF /* AlbumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumManager.swift; sourceTree = "<group>"; };
 		76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		76E2D70A298FFCF40026DC55 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		76E2D70E299002840026DC55 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		76E2D71029900B760026DC55 /* ImageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionView.swift; sourceTree = "<group>"; };
+		76E2D71229900C510026DC55 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		76E645F7298E533100CD6AA6 /* AlbumInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +168,10 @@
 		76E2D705298F95C00026DC55 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */,
 				76E2D70A298FFCF40026DC55 /* AlbumListView.swift */,
+				76AB054E298D63DC00C2DCAF /* AlbumTableViewCell.swift */,
+				76E2D71029900B760026DC55 /* ImageCollectionView.swift */,
+				76E2D71229900C510026DC55 /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */,
+				76E2D70E299002840026DC55 /* ImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,11 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				76AB054F298D63DC00C2DCAF /* AlbumTableViewCell.swift in Sources */,
+				76E2D71129900B760026DC55 /* ImageCollectionView.swift in Sources */,
 				76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */,
 				76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */,
 				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
 				76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */,
+				76E2D71329900C510026DC55 /* ImageCollectionViewCell.swift in Sources */,
 				76AB051F298CDEDE00C2DCAF /* SceneDelegate.swift in Sources */,
+				76E2D70F299002840026DC55 /* ImageViewController.swift in Sources */,
 				76E2D70B298FFCF40026DC55 /* AlbumListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
