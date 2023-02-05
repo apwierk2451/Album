@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class ImageViewController: UIViewController {
+final class ImageViewController: UIViewController {
     
     private var albumTitle = ""
     private var images: [PHAsset] = []
