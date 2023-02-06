@@ -57,10 +57,10 @@ final class ImageViewController: UIViewController {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            imageCollectionView.frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageCollectionView.frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageCollectionView.frameLayoutGuide.topAnchor.constraint(equalTo: view.topAnchor),
-            imageCollectionView.frameLayoutGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            imageCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     

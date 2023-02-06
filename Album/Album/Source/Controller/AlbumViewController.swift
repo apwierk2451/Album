@@ -133,5 +133,6 @@ extension AlbumViewController: UITableViewDelegate {
         let selectedAlbumTitle = albumManager.getAlbums()[indexPath.row].name
         let imageView = ImageViewController(title: selectedAlbumTitle, images: selectedAlbumImages)
         navigationController?.pushViewController(imageView, animated: true)
+        albumsTableView.deselectRow(at: indexPath, animated: true)
     }
 }
