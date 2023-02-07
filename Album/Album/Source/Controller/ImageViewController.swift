@@ -13,6 +13,7 @@ final class ImageViewController: SuperViewControllerSetting {
     private var images: [PHAsset] = []
     
     private lazy var imageCollectionView = ImageCollectionView(frame: .zero, collectionViewLayout: self.createCollectionViewLayout())
+    private lazy var emptyView = EmptyView()
     
     private typealias ImageDataSource = UICollectionViewDiffableDataSource<Section, PHAsset>
     private typealias ImageSnapshot = NSDiffableDataSourceSnapshot<Section, PHAsset>
@@ -43,24 +44,39 @@ final class ImageViewController: SuperViewControllerSetting {
         super.setupDefault()
         view.backgroundColor = .systemBackground
         navigationItem.title = albumTitle
-        imageCollectionView.delegate = self
-        configureDataSource()
-        appendDataSource()
+        if isAlbumEmpty() == false {
+            imageCollectionView.delegate = self
+            configureDataSource()
+            appendDataSource()
+        }
     }
     
     override func addUIComponents() {
         super.addUIComponents()
-        view.addSubview(imageCollectionView)
+        if isAlbumEmpty() {
+            view.addSubview(emptyView)
+        } else {
+            view.addSubview(imageCollectionView)
+        }
     }
     
     override func setupLayout() {
         super.setupLayout()
-        NSLayoutConstraint.activate([
-            imageCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            imageCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        if isAlbumEmpty() {
+            NSLayoutConstraint.activate([
+                emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                emptyView.topAnchor.constraint(equalTo: view.topAnchor),
+                emptyView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                imageCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                imageCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                imageCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+                imageCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        }
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
@@ -136,6 +152,10 @@ final class ImageViewController: SuperViewControllerSetting {
             alert.view.superview?.isUserInteractionEnabled = true
             alert.view.superview?.addGestureRecognizer(tap)
         }
+    }
+    
+    private func isAlbumEmpty() -> Bool {
+        return images.count > 0 ? false : true
     }
     
     @objc

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7653269B2992875D00A3BCFF /* ViewSettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653269A2992875D00A3BCFF /* ViewSettingProtocol.swift */; };
+		7653269D29928AF700A3BCFF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653269C29928AF700A3BCFF /* EmptyView.swift */; };
 		76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */; };
 		76AB051F298CDEDE00C2DCAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */; };
 		76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AB0520298CDEDE00C2DCAF /* AlbumViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		7653269A2992875D00A3BCFF /* ViewSettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSettingProtocol.swift; sourceTree = "<group>"; };
+		7653269C29928AF700A3BCFF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		76AB0519298CDEDE00C2DCAF /* Album.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Album.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76AB051C298CDEDE00C2DCAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76AB051E298CDEDE00C2DCAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				76E2D71029900B760026DC55 /* ImageCollectionView.swift */,
 				76E2D71229900C510026DC55 /* ImageCollectionViewCell.swift */,
 				7653269A2992875D00A3BCFF /* ViewSettingProtocol.swift */,
+				7653269C29928AF700A3BCFF /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				7653269B2992875D00A3BCFF /* ViewSettingProtocol.swift in Sources */,
 				76E2D71129900B760026DC55 /* ImageCollectionView.swift in Sources */,
 				76AB0521298CDEDE00C2DCAF /* AlbumViewController.swift in Sources */,
+				7653269D29928AF700A3BCFF /* EmptyView.swift in Sources */,
 				76AB054D298CE54C00C2DCAF /* AlbumManager.swift in Sources */,
 				76E645F8298E533100CD6AA6 /* AlbumInfo.swift in Sources */,
 				76AB051D298CDEDE00C2DCAF /* AppDelegate.swift in Sources */,
