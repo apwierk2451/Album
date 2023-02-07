@@ -8,8 +8,7 @@
 import UIKit
 import Photos
 
-final class ImageViewController: UIViewController {
-    
+final class ImageViewController: SuperViewControllerSetting {
     private var albumTitle = ""
     private var images: [PHAsset] = []
     
@@ -27,35 +26,35 @@ final class ImageViewController: UIViewController {
     private var dataSource: ImageDataSource?
     
     init(title: String, images: [PHAsset]) {
-        super.init(nibName: nil, bundle: nil)
+        super.init()
         self.albumTitle = title
         self.images = images
+    }
+    
+    required init() {
+        fatalError("init() has not been implemented")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupDefault()
-        addUIComponents()
-        setupLayout()
+    override func setupDefault() {
+        super.setupDefault()
+        view.backgroundColor = .systemBackground
+        navigationItem.title = albumTitle
+        imageCollectionView.delegate = self
         configureDataSource()
         appendDataSource()
     }
     
-    private func setupDefault() {
-        view.backgroundColor = .systemBackground
-        navigationItem.title = albumTitle
-        imageCollectionView.delegate = self
-    }
-    
-    private func addUIComponents() {
+    override func addUIComponents() {
+        super.addUIComponents()
         view.addSubview(imageCollectionView)
     }
     
-    private func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
         NSLayoutConstraint.activate([
             imageCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

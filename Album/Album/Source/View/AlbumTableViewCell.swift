@@ -80,8 +80,8 @@ final class AlbumTableViewCell: UITableViewCell {
         ])
     }
     
-    func configureImage(album: UIImage) {
-        albumImage.image = album
+    func configureImage(_ image: UIImage) {
+        albumImage.image = image
     }
     
     func configureAlbumTitle(_ title: String) {

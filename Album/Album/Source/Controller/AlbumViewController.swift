@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-final class AlbumViewController: UIViewController {
+final class AlbumViewController: SuperViewControllerSetting {
     private let albumsTableView = AlbumListView()
     
     private let albumManager = AlbumManager.shared
@@ -23,27 +23,23 @@ final class AlbumViewController: UIViewController {
     
     private var dataSource: AlbumDataSource?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupDefault()
-        addUIComponents()
-        setupLayout()
+    override func setupDefault() {
+        super.setupDefault()
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "앨범"
+        albumsTableView.delegate = self
         checkPermission()
         configureDataSource()
         appendDataSource()
     }
     
-    private func setupDefault() {
-        view.backgroundColor = .systemBackground
-        navigationItem.title = "앨범"
-        albumsTableView.delegate = self
-    }
-    
-    private func addUIComponents() {
+    override func addUIComponents() {
+        super.addUIComponents()
         view.addSubview(albumsTableView)
     }
     
-    private func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
         NSLayoutConstraint.activate([
             albumsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             albumsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -106,7 +102,7 @@ final class AlbumViewController: UIViewController {
                 ) { (image, _) in
                     guard let image = image else { return }
                     
-                    cell.configureImage(album: image)
+                    cell.configureImage(image)
                 }
             }
             
