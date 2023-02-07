@@ -94,7 +94,7 @@ final class AlbumTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        albumImage.image = UIImage(systemName: "photo.on.rectangle")
+        albumImage.image = nil
         albumName.text = ""
         albumCount.text = "0"
     }

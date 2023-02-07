@@ -48,4 +48,9 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     func configureImage(image: UIImage) {
         imageView.image = image
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
 }

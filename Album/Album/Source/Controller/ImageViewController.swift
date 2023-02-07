@@ -112,7 +112,9 @@ final class ImageViewController: UIViewController {
         var snapshot = ImageSnapshot()
         snapshot.appendSections([.image])
         snapshot.appendItems(images)
-        dataSource?.applySnapshotUsingReloadData(snapshot)
+        DispatchQueue.main.async {
+            self.dataSource?.applySnapshotUsingReloadData(snapshot)
+        }
     }
     
     private func showImageInfo(image: PHAsset) {

@@ -16,6 +16,7 @@ final class AlbumManager {
     private var fetchOptions: PHFetchOptions {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+
         return fetchOptions
     }
     
@@ -39,6 +40,7 @@ final class AlbumManager {
             
             name.append(albumName)
         }
+        
         for i in 0..<collection.count {
             let collection = collection.object(at: i)
             let asset = PHAsset.fetchAssets(in: collection, options: fetchOptions)
