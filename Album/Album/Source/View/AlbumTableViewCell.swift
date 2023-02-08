@@ -9,18 +9,27 @@ import UIKit
 
 final class AlbumTableViewCell: UITableViewCell {
     
-    static let identifier = "AlbumsCell"
+    private enum AlbumTableViewCellNameSpace {
+        static let albumTableViewCellIdentifier = "AlbumsCell"
+        static let defaultImageName = "photo.on.rectangle"
+        static let defaultAlbumTitle = ""
+        static let defaultImageCount = "0"
+    }
+    
+    static let identifier = AlbumTableViewCellNameSpace.albumTableViewCellIdentifier
     
     private let albumImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "photo.on.rectangle")
+        imageView.image = UIImage(
+            systemName: AlbumTableViewCellNameSpace.defaultImageName
+        )
         imageView.tintColor = .gray
         
         return imageView
     }()
     
-    private let albumName: UILabel = {
+    private let albumTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17)
@@ -63,7 +72,7 @@ final class AlbumTableViewCell: UITableViewCell {
         contentView.addSubview(albumImage)
         contentView.addSubview(labelStackView)
         
-        labelStackView.addArrangedSubview(albumName)
+        labelStackView.addArrangedSubview(albumTitle)
         labelStackView.addArrangedSubview(albumCount)
     }
     
@@ -85,7 +94,7 @@ final class AlbumTableViewCell: UITableViewCell {
     }
     
     func configureAlbumTitle(_ title: String) {
-        albumName.text = title
+        albumTitle.text = title
     }
     
     func configureAlbumCount(_ count: Int) {
@@ -95,7 +104,7 @@ final class AlbumTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         albumImage.image = nil
-        albumName.text = ""
-        albumCount.text = "0"
+        albumTitle.text = AlbumTableViewCellNameSpace.defaultAlbumTitle
+        albumCount.text = AlbumTableViewCellNameSpace.defaultImageCount
     }
 }

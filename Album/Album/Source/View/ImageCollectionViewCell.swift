@@ -8,7 +8,12 @@
 import UIKit
 
 final class ImageCollectionViewCell: UICollectionViewCell {
-    static let identifier = "ImagesCell"
+    
+    private enum ImageCollectionViewCellNameSpace {
+        static let imageCollectionViewCellIdentifier = "ImagesCell"
+    }
+    
+    static let identifier = ImageCollectionViewCellNameSpace.imageCollectionViewCellIdentifier
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

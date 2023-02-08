@@ -9,13 +9,17 @@ import Photos
 
 final class AlbumManager {
     
+    private enum AlbumManagerNameSpace {
+        static let imageFetchOptionSortKey = "creationDate"
+    }
+    
     static let shared = AlbumManager()
     
     private var albums = [AlbumInfo]()
     
     private var fetchOptions: PHFetchOptions {
         let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: AlbumManagerNameSpace.imageFetchOptionSortKey, ascending: false)]
 
         return fetchOptions
     }
@@ -30,7 +34,7 @@ final class AlbumManager {
         addAlbums(collection: userCollections)
     }
     
-    private func addAlbums(collection : PHFetchResult<PHAssetCollection>) {
+    private func addAlbums(collection: PHFetchResult<PHAssetCollection>) {
         var name: [String] = []
         var fetchResults: [PHFetchResult<PHAsset>] = []
         

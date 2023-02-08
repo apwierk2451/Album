@@ -9,6 +9,12 @@ import UIKit
 import Photos
 
 final class AlbumViewController: SuperViewControllerSetting {
+    
+    private enum AlbumViewControllerNameSpace {
+        static let defaultNavigationTitle = "앨범"
+        static let permissionMessage = "사진 앱 접근 권한이 없습니다.\n[설정] - [개인 정보 보호] - [사진]에서 설정해주세요."
+    }
+    
     private let albumsTableView = AlbumListView()
     
     private let albumManager = AlbumManager.shared
@@ -26,7 +32,7 @@ final class AlbumViewController: SuperViewControllerSetting {
     override func setupDefault() {
         super.setupDefault()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "앨범"
+        navigationItem.title = AlbumViewControllerNameSpace.defaultNavigationTitle
         albumsTableView.delegate = self
         checkPermission()
         configureDataSource()
@@ -69,7 +75,7 @@ final class AlbumViewController: SuperViewControllerSetting {
     }
     
     private func setupPermission() {
-        let message = "사진 앱 접근 권한이 없습니다.\n[설정] - [개인 정보 보호] - [사진]에서 설정해주세요."
+        let message = AlbumViewControllerNameSpace.permissionMessage
         let alert = UIAlertController(title: "설정", message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "취소", style: .destructive)
         let okAction = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in

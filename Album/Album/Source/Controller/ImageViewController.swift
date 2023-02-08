@@ -44,6 +44,7 @@ final class ImageViewController: SuperViewControllerSetting {
         super.setupDefault()
         view.backgroundColor = .systemBackground
         navigationItem.title = albumTitle
+        
         if isAlbumEmpty() == false {
             imageCollectionView.delegate = self
             configureDataSource()
@@ -132,18 +133,17 @@ final class ImageViewController: SuperViewControllerSetting {
         }
     }
     
-    private func getImageInfo(image: PHAsset) {
+    private func getImageInfo(image: PHAsset) -> String {
         let resource = PHAssetResource.assetResources(for: image)
-        let filename = resource.first?.originalFilename ?? "unknown"
-        
-        guard let unsignedInt64 = resource.first?.value(forKey: "fileSize") as? CLong else { return }
+        guard let filename = resource.first?.originalFilename,
+              let unsignedInt64 = resource.first?.value(forKey: "fileSize") as? CLong else { return "" }
         
         let sizeOnDisk = Int64(bitPattern: UInt64(unsignedInt64))
         let fileSize = String(format: "%.2f", Double(sizeOnDisk) / (1024.0 * 1024.0))+" MB"
         
         let message = "파일명 : \(filename)\n파일크기: \(fileSize)"
         
-        showAlert(message)
+        return message
     }
     
     private func showAlert(_ message: String) {
@@ -170,6 +170,7 @@ final class ImageViewController: SuperViewControllerSetting {
 
 extension ImageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        getImageInfo(image: images[indexPath.row])
+        let message = getImageInfo(image: images[indexPath.row])
+        showAlert(message)
     }
 }

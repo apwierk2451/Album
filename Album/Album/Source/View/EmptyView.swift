@@ -9,11 +9,15 @@ import UIKit
 
 final class EmptyView: UIView {
     
+    private enum EmptyViewNameSpace {
+        static let defaultText = "사진 또는 비디오 없음"
+    }
+    
     private let title: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "사진 또는 비디오 없음"
+        label.text = EmptyViewNameSpace.defaultText
         
         return label
     }()
