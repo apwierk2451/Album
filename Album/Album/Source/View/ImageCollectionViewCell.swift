@@ -24,17 +24,12 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupDefault()
         addUIComponents()
         setupLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupDefault() {
-        backgroundColor = .systemBackground
     }
     
     private func addUIComponents() {
