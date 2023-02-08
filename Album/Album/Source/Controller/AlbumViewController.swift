@@ -120,7 +120,9 @@ final class AlbumViewController: SuperViewControllerSetting {
         var snapshot = AlbumSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(albumManager.getAlbums())
-        dataSource?.applySnapshotUsingReloadData(snapshot)
+        DispatchQueue.main.async {
+            dataSource?.applySnapshotUsingReloadData(snapshot)
+        }
     }
 }
 
