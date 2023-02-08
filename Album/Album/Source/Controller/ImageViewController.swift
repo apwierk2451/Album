@@ -141,7 +141,7 @@ final class ImageViewController: SuperViewControllerSetting {
         let sizeOnDisk = Int64(bitPattern: UInt64(unsignedInt64))
         let fileSize = String(format: "%.2f", Double(sizeOnDisk) / (1024.0 * 1024.0))+" MB"
         
-        let message = "파일명 : \(filename)\n파일크기: \(fileSize)"
+        let message = "파일명 : \(filename)\n파일크기 : \(fileSize)"
         
         return message
     }
