@@ -49,7 +49,7 @@ final class AlbumTests: XCTestCase {
         // given
         sut.requestImageCollection()
         // when
-        let result = sut.getAlbums()[1].count
+        let result = sut.getAlbums()[1].album.count
         // then
         XCTAssertEqual(result, 0)
     }

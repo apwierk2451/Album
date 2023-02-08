@@ -32,7 +32,6 @@ final class AlbumManager {
     
     private func addAlbums(collection : PHFetchResult<PHAssetCollection>) {
         var name: [String] = []
-        var count: [Int] = []
         var fetchResults: [PHFetchResult<PHAsset>] = []
         
         collection.enumerateObjects { smartAlbum, _, _ in
@@ -44,14 +43,12 @@ final class AlbumManager {
         for i in 0..<collection.count {
             let collection = collection.object(at: i)
             let asset = PHAsset.fetchAssets(in: collection, options: fetchOptions)
-            count.append(asset.count)
             fetchResults.append(asset)
         }
         
         for collectionIndex in 0..<collection.count {
             let album = AlbumInfo(
                 name: name[collectionIndex],
-                count: count[collectionIndex],
                 album: fetchResults[collectionIndex]
             )
             albums.append(album)

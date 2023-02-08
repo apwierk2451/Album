@@ -9,6 +9,5 @@ import Photos
 
 struct AlbumInfo: Hashable {
     let name: String
-    let count: Int
     let album: PHFetchResult<PHAsset>
 }

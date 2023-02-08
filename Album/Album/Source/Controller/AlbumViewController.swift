@@ -91,7 +91,7 @@ final class AlbumViewController: SuperViewControllerSetting {
             }
             
             cell.configureAlbumTitle(itemIdentifier.name)
-            cell.configureAlbumCount(itemIdentifier.count)
+            cell.configureAlbumCount(itemIdentifier.album.count)
             
             if let asset = itemIdentifier.album.firstObject {
                 self?.imageManager.requestImage(
@@ -122,7 +122,7 @@ extension AlbumViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selectedAlbumImages: [PHAsset] = []
         let selectedAlbum = albumManager.getAlbums()[indexPath.row]
-        for imageNumber in 0..<albumManager.getAlbums()[indexPath.row].count {
+        for imageNumber in 0..<albumManager.getAlbums()[indexPath.row].album.count {
             let image = selectedAlbum.album[imageNumber]
             selectedAlbumImages.append(image)
         }
