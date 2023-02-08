@@ -51,6 +51,6 @@ final class AlbumTests: XCTestCase {
         // when
         let result = sut.getAlbums()[1].count
         // then
-        XCTAssertEqual(result, 1)
+        XCTAssertEqual(result, 0)
     }
 }

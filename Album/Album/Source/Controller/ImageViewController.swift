@@ -132,7 +132,7 @@ final class ImageViewController: SuperViewControllerSetting {
         }
     }
     
-    private func showImageInfo(image: PHAsset) {
+    private func getImageInfo(image: PHAsset) {
         let resource = PHAssetResource.assetResources(for: image)
         let filename = resource.first?.originalFilename ?? "unknown"
         
@@ -143,6 +143,10 @@ final class ImageViewController: SuperViewControllerSetting {
         
         let message = "파일명 : \(filename)\n파일크기: \(fileSize)"
         
+        showAlert(message)
+    }
+    
+    private func showAlert(_ message: String) {
         let alert = UIAlertController(title: "사진 정보", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default)
         
@@ -166,6 +170,6 @@ final class ImageViewController: SuperViewControllerSetting {
 
 extension ImageViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showImageInfo(image: images[indexPath.row])
+        getImageInfo(image: images[indexPath.row])
     }
 }
