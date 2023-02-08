@@ -121,7 +121,7 @@ final class AlbumViewController: SuperViewControllerSetting {
         snapshot.appendSections([.main])
         snapshot.appendItems(albumManager.getAlbums())
         DispatchQueue.main.async {
-            dataSource?.applySnapshotUsingReloadData(snapshot)
+            self.dataSource?.applySnapshotUsingReloadData(snapshot)
         }
     }
 }
