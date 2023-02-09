@@ -103,7 +103,7 @@ final class ImageViewController: SuperViewControllerSetting {
             
             self.imageManager.requestImage(
                 for: itemIdentifier,
-                targetSize: .zero,
+                targetSize: CGSize(width: 270, height: 270),
                 contentMode: .aspectFill,
                 options: .none
             ) { (image, _) in
