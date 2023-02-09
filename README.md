@@ -79,4 +79,10 @@ Figma를 이용하여 요구사항을 구현해봤습니다.
 - didSelectRowAt에서 ImageView로 push한 뒤         `albumsTableView.deselectRow(at: indexPath, animated: true)`
 코드를 추가하여 해결하였습니다.
 
+<br>
+
+### 4. 앨범 상세 확인 후 돌아왔을 때 cell 배경화면이 바뀌는 문제
+
+- 스크롤을 빠르게 할 경우 이미지가 뒤바뀌는 문제가 발생했습니다.
+- requestImage할 때, targetSize가 360이 넘어가면 속도가 현저히 느려진다는 것을 알게되었고, 사이즈를 지정해주면서 해결하였습니다.
 ---
