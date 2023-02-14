@@ -42,7 +42,7 @@ final class ImageViewController: SuperViewControllerSetting {
     
     override func setupDefault() {
         super.setupDefault()
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         navigationItem.title = albumTitle
         
         if isAlbumEmpty() == false {

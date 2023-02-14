@@ -31,7 +31,7 @@ final class AlbumViewController: SuperViewControllerSetting {
     
     override func setupDefault() {
         super.setupDefault()
-        view.backgroundColor = .clear
+        view.backgroundColor = .white
         navigationItem.title = AlbumViewControllerNameSpace.defaultNavigationTitle
         albumsTableView.delegate = self
         checkPermission()

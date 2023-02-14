@@ -34,7 +34,7 @@ final class EmptyView: UIView {
     }
     
     private func setupDefault() {
-        backgroundColor = .clear
+        backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
     }
     
